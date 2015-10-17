@@ -13,18 +13,18 @@ infix operator =~ {
 associativity none
 precedence 130
 }
-func =~(str: String, pattern: String) -> Bool {
+public func =~(str: String, pattern: String) -> Bool {
     return pattern.toRegex().matches(str).count > 0
 }
 
 
-extension String {
+public extension String {
 
-    func toRegex() -> NSRegularExpression {
+    private func toRegex() -> NSRegularExpression {
         return try! NSRegularExpression(pattern: self, options: NSRegularExpressionOptions.UseUnixLineSeparators)
     }
 
-    func sub(pattern: String, withString: String) -> String {
+    public func sub(pattern: String, withString: String) -> String {
         let regex = pattern.toRegex()
         let matches = regex.matches(self)
         if matches.count > 0 {
@@ -33,13 +33,13 @@ extension String {
         return self
     }
 
-    func gsub(pattern: String, withString: String) -> String {
+    public func gsub(pattern: String, withString: String) -> String {
         let regex = pattern.toRegex()
         let result = regex.stringByReplacingMatchesInString(self, options: NSMatchingOptions.WithTransparentBounds, range: NSMakeRange(0, self.characters.count), withTemplate: withString)
         return result
     }
 
-    func scan(pattern: String) -> [String] {
+    public func scan(pattern: String) -> [String] {
         let regex = pattern.toRegex()
         let matches = regex.matches(self)
         let str = self as NSString
@@ -50,9 +50,9 @@ extension String {
 }
 
 
-extension NSRegularExpression {
+private extension NSRegularExpression {
 
-    func matches(input: String) -> [NSTextCheckingResult] {
+    private func matches(input: String) -> [NSTextCheckingResult] {
         return self.matchesInString(input, options: NSMatchingOptions.WithTransparentBounds, range: NSMakeRange(0, input.characters.count))
     }
 
