@@ -21,9 +21,22 @@ class SwiftyRegexTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testMatch() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertTrue("123456" =~ "^\\d+$")
+    }
+
+    func testSub() {
+        XCTAssertTrue("2bb" == "bbb".sub("b", withString: "2"))
+    }
+
+    func testGsub() {
+        XCTAssertTrue("222" == "bbb".gsub("b", withString: "2"))
+    }
+
+    func testScan() {
+        XCTAssertTrue(["123", "456", "7890"] == "(123) 456-7890".scan("\\d+"))
     }
     
     func testPerformanceExample() {
