@@ -10,6 +10,7 @@
 		D4CB877F1BD1D2850084DC6D /* SwiftyRegex.h in Headers */ = {isa = PBXBuildFile; fileRef = D4CB877E1BD1D2850084DC6D /* SwiftyRegex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4CB87861BD1D2850084DC6D /* SwiftyRegex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CB877B1BD1D2850084DC6D /* SwiftyRegex.framework */; settings = {ASSET_TAGS = (); }; };
 		D4CB878B1BD1D2850084DC6D /* SwiftyRegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB878A1BD1D2850084DC6D /* SwiftyRegexTests.swift */; };
+		D4CB87961BD1D39F0084DC6D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D4CB87951BD1D39F0084DC6D /* README.md */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		D4CB87851BD1D2850084DC6D /* SwiftyRegexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyRegexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CB878A1BD1D2850084DC6D /* SwiftyRegexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRegexTests.swift; sourceTree = "<group>"; };
 		D4CB878C1BD1D2850084DC6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4CB87951BD1D39F0084DC6D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		D4CB87711BD1D2850084DC6D = {
 			isa = PBXGroup;
 			children = (
+				D4CB87951BD1D39F0084DC6D /* README.md */,
 				D4CB877D1BD1D2850084DC6D /* SwiftyRegex */,
 				D4CB87891BD1D2850084DC6D /* SwiftyRegexTests */,
 				D4CB877C1BD1D2850084DC6D /* Products */,
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4CB87961BD1D39F0084DC6D /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -291,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
