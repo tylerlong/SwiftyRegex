@@ -25,6 +25,11 @@ Regular Expression for Swift programming language.
     "(123) 456-7890".scan("\\d+") // ["123", "456", "7890"]
 
 
+### split
+
+    "aaa123bbb456ccc789ddd".split("\\d+") // ["aaa", "bbb", "ccc", "ddd"]
+
+
 ## Installation
 
 ### Carthage
@@ -36,8 +41,3 @@ Add the following to Carfile:
 Run the following command to install:
 
     carthage update --platform Mac
-
-
-## todo
-
-    split

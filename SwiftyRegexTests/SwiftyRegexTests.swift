@@ -38,6 +38,10 @@ class SwiftyRegexTests: XCTestCase {
     func testScan() {
         XCTAssertTrue(["123", "456", "7890"] == "(123) 456-7890".scan("\\d+"))
     }
+
+    func testSplit() {
+        XCTAssertTrue(["aaa", "bbb", "ccc", "ddd"] == "aaa123bbb456ccc789ddd".split("\\d+"))
+    }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

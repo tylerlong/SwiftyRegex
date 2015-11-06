@@ -47,6 +47,12 @@ public extension String {
         return result
     }
 
+    public func split(pattern: String) -> [String] {
+        let separator = "~@$^*)+_(&%#!"
+        let temp = self.gsub(pattern, withString: separator)
+        return temp.componentsSeparatedByString(separator)
+    }
+
 }
 
 
