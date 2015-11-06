@@ -41,3 +41,10 @@ Add the following to Carfile:
 Run the following command to install:
 
     carthage update --platform Mac
+
+
+## License
+
+MIT
+
+Copyright © 2015 Tyler Long
