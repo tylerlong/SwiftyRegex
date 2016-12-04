@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D4CB877F1BD1D2850084DC6D /* SwiftyRegex.h in Headers */ = {isa = PBXBuildFile; fileRef = D4CB877E1BD1D2850084DC6D /* SwiftyRegex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D4CB87861BD1D2850084DC6D /* SwiftyRegex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CB877B1BD1D2850084DC6D /* SwiftyRegex.framework */; settings = {ASSET_TAGS = (); }; };
+		D4CB87861BD1D2850084DC6D /* SwiftyRegex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CB877B1BD1D2850084DC6D /* SwiftyRegex.framework */; };
 		D4CB878B1BD1D2850084DC6D /* SwiftyRegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB878A1BD1D2850084DC6D /* SwiftyRegexTests.swift */; };
-		D4CB87981BD1D5470084DC6D /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB87971BD1D5470084DC6D /* RegexHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		D4CB87981BD1D5470084DC6D /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB87971BD1D5470084DC6D /* RegexHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,14 +147,16 @@
 		D4CB87721BD1D2850084DC6D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Tylingsoft;
 				TargetAttributes = {
 					D4CB877A1BD1D2850084DC6D = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0810;
 					};
 					D4CB87841BD1D2850084DC6D = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -234,8 +236,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -280,8 +284,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -300,6 +306,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -320,6 +327,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Tylingsoft.SwiftyRegex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -338,6 +346,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Tylingsoft.SwiftyRegex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -349,6 +358,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tylingsoft.SwiftyRegexTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -360,6 +370,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tylingsoft.SwiftyRegexTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -382,6 +393,7 @@
 				D4CB87911BD1D2850084DC6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4CB87921BD1D2850084DC6D /* Build configuration list for PBXNativeTarget "SwiftyRegexTests" */ = {
 			isa = XCConfigurationList;
@@ -390,6 +402,7 @@
 				D4CB87941BD1D2850084DC6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
