@@ -9,10 +9,7 @@
 import Foundation
 
 
-infix operator =~ {
-associativity none
-precedence 130
-}
+infix operator =~ : ComparisonPrecedence
 public func =~(str: String, pattern: String) -> Bool {
     return pattern.toRegex().matches(str).count > 0
 }
@@ -20,37 +17,37 @@ public func =~(str: String, pattern: String) -> Bool {
 
 public extension String {
 
-    private func toRegex() -> NSRegularExpression {
-        return try! NSRegularExpression(pattern: self, options: NSRegularExpressionOptions.UseUnixLineSeparators)
+    fileprivate func toRegex() -> NSRegularExpression {
+        return try! NSRegularExpression(pattern: self, options: NSRegularExpression.Options.useUnixLineSeparators)
     }
 
-    public func sub(pattern: String, withString: String) -> String {
+    public func sub(_ pattern: String, withString: String) -> String {
         let regex = pattern.toRegex()
         let matches = regex.matches(self)
         if matches.count > 0 {
-            return regex.stringByReplacingMatchesInString(self, options: NSMatchingOptions.WithTransparentBounds, range: matches[0].range, withTemplate: withString)
+            return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions.withTransparentBounds, range: matches[0].range, withTemplate: withString)
         }
         return self
     }
 
-    public func gsub(pattern: String, withString: String) -> String {
+    public func gsub(_ pattern: String, withString: String) -> String {
         let regex = pattern.toRegex()
-        let result = regex.stringByReplacingMatchesInString(self, options: NSMatchingOptions.WithTransparentBounds, range: NSMakeRange(0, self.characters.count), withTemplate: withString)
+        let result = regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions.withTransparentBounds, range: NSMakeRange(0, self.characters.count), withTemplate: withString)
         return result
     }
 
-    public func scan(pattern: String) -> [String] {
+    public func scan(_ pattern: String) -> [String] {
         let regex = pattern.toRegex()
         let matches = regex.matches(self)
         let str = self as NSString
-        let result = matches.map { str.substringWithRange($0.range) }
+        let result = matches.map { str.substring(with: $0.range) }
         return result
     }
 
-    public func split(pattern: String) -> [String] {
+    public func split(_ pattern: String) -> [String] {
         let separator = "~@$^*)+_(&%#!"
         let temp = self.gsub(pattern, withString: separator)
-        return temp.componentsSeparatedByString(separator)
+        return temp.components(separatedBy: separator)
     }
 
 }
@@ -58,8 +55,8 @@ public extension String {
 
 private extension NSRegularExpression {
 
-    private func matches(input: String) -> [NSTextCheckingResult] {
-        return self.matchesInString(input, options: NSMatchingOptions.WithTransparentBounds, range: NSMakeRange(0, input.characters.count))
+    func matches(_ input: String) -> [NSTextCheckingResult] {
+        return self.matches(in: input, options: NSRegularExpression.MatchingOptions.withTransparentBounds, range: NSMakeRange(0, input.characters.count))
     }
 
 }
